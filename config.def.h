@@ -96,6 +96,11 @@ static const Key keys[] = {
 	/* brightness keys */
 	{ 0, XF86XK_MonBrightnessUp,   spawn, SHCMD("brightnessctl set +5% && brightnessctl g > ~/.cache/brightness_level") },
 	{ 0, XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set 5%- && brightnessctl g > ~/.cache/brightness_level") },
+	
+	{ 0, XK_Print, spawn, SHCMD("~/scripts/screenshot.sh") },
+
+	{ ControlMask|Mod1Mask, XK_Delete, spawn, SHCMD("~/scripts/power-menu.sh") },
+
 
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
