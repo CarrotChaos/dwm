@@ -78,9 +78,9 @@ static const char *normcap[]  = { "normcap", NULL };
 static const char *ranger[]   = {"st", "-e", "ranger", NULL};
 
 /* volume controls */
-static const char *volup[]   = { "sh", "-c", "~/dwm/volume-scripts/volup.sh", NULL };
-static const char *voldown[] = { "sh", "-c", "~/dwm/volume-scripts/voldown.sh", NULL };
-static const char *volmute[] = { "sh", "-c", "~/dwm/volume-scripts/volmute.sh", NULL };
+static const char *volup[]   = { "sh", "-c", "~/scripts/volume-scripts/volup.sh", NULL };
+static const char *voldown[] = { "sh", "-c", "~/scripts/volume-scripts/voldown.sh", NULL };
+static const char *volmute[] = { "sh", "-c", "~/scripts/volume-scripts/volmute.sh", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
