@@ -100,6 +100,8 @@ static const Key keys[] = {
 	{ 0, XK_Print, spawn, SHCMD("~/scripts/screenshot.sh") },
 
 	{ ControlMask|Mod1Mask, XK_Delete, spawn, SHCMD("~/scripts/power-menu.sh") },
+	{ MODKEY, XK_u, spawn, SHCMD("~/scripts/mount.sh") },
+	{ ControlMask|ShiftMask, XK_x, spawn, SHCMD("~/scripts/pass-enhanced.sh") },
 
 
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
