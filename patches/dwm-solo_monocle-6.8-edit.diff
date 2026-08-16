@@ -36,7 +36,7 @@ index 53b393e..ac4fe55 100644
 +	/* Find the most recently focused client and bring it into view */
 +	for (s = m->stack; s; s = s->snext) {
 +		if (ISVISIBLE(s) && !s->isfloating) {
-+			resize(s, m->wx, m->wy, m->ww - 2 * s->bw, m->wh - 2 * s->bw, 0);
++			resize(s, m->wx + m->gappx, m->wy + m->gappx, m->ww - 2 * s->bw - 2 * m->gappx, m->wh - 2 * s->bw - 2 * m->gappx, 0);
 +			XMoveWindow(dpy, s->win, s->x, s->y);
 +			break;
 +		}
