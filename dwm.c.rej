@@ -1,0 +1,31 @@
+--- dwm.c
++++ dwm.c
+@@ -659,6 +675,28 @@ createmon(void)
+ 	m->lt[0] = &layouts[0];
+ 	m->lt[1] = &layouts[1 % LENGTH(layouts)];
+ 	strncpy(m->ltsymbol, layouts[0].symbol, sizeof m->ltsymbol);
++	if (!(m->pertag = (Pertag *)calloc(1, sizeof(Pertag))))
++		die("fatal: could not malloc() %u bytes\n", sizeof(Pertag));
++	m->pertag->curtag = m->pertag->prevtag = 1;
++	for (i = 0; i <= LENGTH(tags); i++) {
++		/* init nmaster */
++		m->pertag->nmasters[i] = m->nmaster;
++
++		/* init mfacts */
++		m->pertag->mfacts[i] = m->mfact;
++
++		/* init layouts */
++		m->pertag->ltidxs[i][0] = m->lt[0];
++		m->pertag->ltidxs[i][1] = m->lt[1];
++		m->pertag->sellts[i] = m->sellt;
++
++		/* init showbar */
++		m->pertag->showbars[i] = m->showbar;
++
++		#if ZOOMSWAP_PATCH
++		m->pertag->prevzooms[i] = NULL;
++		#endif // ZOOMSWAP_PATCH
++	}
+ 	return m;
+ }
+ 
