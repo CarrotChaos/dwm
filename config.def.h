@@ -121,7 +121,7 @@ static const Key keys[] = {
 	{ControlMask | Mod1Mask, XK_Delete, spawn,
 	SHCMD("~/scripts/power-menu.sh")},
 	{MODKEY, XK_u, spawn, SHCMD("~/scripts/mount.sh")},
-	{ControlMask | ShiftMask, XK_x, spawn, SHCMD("~/scripts/passdm.sh")},
+	{ControlMask | ShiftMask, XK_x, spawn, SHCMD("~/scripts/passmenu.sh")},
 
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,		        XK_Return, spawn,          {.v = termcmd } },
